@@ -299,6 +299,8 @@ nav.scrolled { border-bottom-color: rgba(201,168,76,0.35); }
   overflow: hidden;
   transition: background 0.35s;
   background: var(--dark2);
+  display: flex;
+  flex-direction: column;
 }
 .service-card:last-child { border-right: none; }
 .service-card::before {
@@ -306,17 +308,13 @@ nav.scrolled { border-bottom-color: rgba(201,168,76,0.35); }
   position: absolute;
   top: 0; left: 0;
   width: 100%; height: 100%;
-  background: var(--gold);
+  background: var(--dark3);
   transform: translateX(-100%);
   transition: transform 0.38s cubic-bezier(0.4, 0, 0.2, 1);
   z-index: 0;
 }
 .service-card > * { position: relative; z-index: 1; }
 .service-card:hover::before { transform: translateX(0); }
-.service-card:hover .service-name { color: var(--black); }
-.service-card:hover .service-desc { color: rgba(0,0,0,0.65); }
-.service-card:hover .service-num { color: rgba(0,0,0,0.12); }
-.service-card:hover .service-price-tag { background: var(--black); color: var(--gold); }
 .service-num {
   font-family: var(--mono);
   font-size: 0.65rem;
@@ -364,6 +362,65 @@ nav.scrolled { border-bottom-color: rgba(201,168,76,0.35); }
   clip-path: polygon(6px 0%, 100% 0%, calc(100% - 6px) 100%, 0% 100%);
   transition: background 0.35s, color 0.35s;
 }
+.service-includes {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 20px 0;
+}
+.service-includes li {
+  font-size: 0.83rem;
+  color: var(--muted);
+  padding: 4px 0 4px 16px;
+  position: relative;
+  line-height: 1.5;
+  transition: color 0.35s;
+}
+.service-includes li::before {
+  content: '—';
+  position: absolute;
+  left: 0;
+  color: var(--gold);
+  transition: color 0.35s;
+}
+.service-time {
+  font-family: var(--mono);
+  font-size: 0.62rem;
+  color: rgba(224,184,78,0.5);
+  letter-spacing: 0.08em;
+  margin-bottom: 24px;
+  display: block;
+  transition: color 0.35s;
+}
+.service-pricing {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  margin-top: auto;
+}
+.service-tier {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 6px 12px;
+  background: rgba(224,184,78,0.06);
+  border-left: 2px solid var(--gold);
+  transition: background 0.35s, border-color 0.35s;
+}
+.tier-label {
+  font-size: 0.78rem;
+  color: var(--muted);
+  transition: color 0.35s;
+}
+.tier-price {
+  font-family: var(--condensed);
+  font-weight: 700;
+  font-size: 1rem;
+  color: var(--gold);
+  transition: color 0.35s;
+}
+.service-card:hover .service-tier { background: var(--gold); border-left-color: var(--gold); }
+.service-card:hover .tier-label { color: rgba(0,0,0,0.7); }
+.service-card:hover .tier-price { color: var(--black); }
 
 /* ADDONS BOX */
 .addons-box {
@@ -383,7 +440,7 @@ nav.scrolled { border-bottom-color: rgba(201,168,76,0.35); }
 }
 .addons-items {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: 1fr;
   gap: 0;
 }
 .addon-item {
@@ -410,6 +467,16 @@ nav.scrolled { border-bottom-color: rgba(201,168,76,0.35); }
 .addon-item:hover::before { transform: translateX(0); }
 .addon-item:hover .addon-item-name { color: var(--black); }
 .addon-item:hover .addon-item-desc { color: rgba(0,0,0,0.65); }
+.addon-item:hover .addon-item-price { color: var(--black); }
+.addon-item-price {
+  font-family: var(--condensed);
+  font-weight: 700;
+  font-size: 1rem;
+  color: var(--gold);
+  margin-top: 10px;
+  display: block;
+  transition: color 0.35s;
+}
 .addon-item-name {
   font-family: var(--condensed);
   font-weight: 900;
@@ -1060,41 +1127,65 @@ img[src^="images/"] { cursor: zoom-in; }
   <div class="services-grid">
     <div class="service-card slide-in">
       <span class="service-num">// 001</span>
-      <div class="service-name">Full Detail: Car</div>
-      <p class="service-desc">Complete interior and exterior treatment. Deep vacuum, wipe-down, window cleaning, tire dressing. The works. Your car, completely transformed.</p>
-      <div class="service-price-tag">From $150</div>
+      <div class="service-name">Premium Exterior Wash</div>
+      <p class="service-desc">A thorough exterior treatment from top to bottom. Paint, wheels, tires — all cleaned and dressed to impress.</p>
+      <ul class="service-includes">
+        <li>Full Exterior Foam Bath</li>
+        <li>Wheels &amp; Tires Deep Cleaned</li>
+        <li>Tire Shine Applied</li>
+      </ul>
+      <span class="service-time">~ 1–2 hrs</span>
+      <div class="service-pricing">
+        <div class="service-tier"><span class="tier-label">Sedan</span><span class="tier-price">$65</span></div>
+        <div class="service-tier"><span class="tier-label">SUV</span><span class="tier-price">$75</span></div>
+        <div class="service-tier"><span class="tier-label">Large SUV &amp; Truck</span><span class="tier-price">$100</span></div>
+      </div>
     </div>
     <div class="service-card slide-in">
       <span class="service-num">// 002</span>
-      <div class="service-name">Full Detail: SUV / Truck</div>
-      <p class="service-desc">Same thorough process for bigger cabins. SUVs, vans, trucks. More surface area, same uncompromising standard.</p>
-      <div class="service-price-tag">From $200</div>
+      <div class="service-name">Interior Detail</div>
+      <p class="service-desc">A deep clean of every surface inside your vehicle. Spotless, protected, and fresh from dash to door panel.</p>
+      <ul class="service-includes">
+        <li>Complete Vacuum &amp; Wipe Down of All Cracks &amp; Crevices</li>
+        <li>UV Protection Applied to Interior Surfaces</li>
+        <li>Leather Cleaned</li>
+        <li>Streak-Free Glass</li>
+      </ul>
+      <span class="service-time">~ 2–4 hrs</span>
+      <div class="service-pricing">
+        <div class="service-tier"><span class="tier-label">Sedan</span><span class="tier-price">$125</span></div>
+        <div class="service-tier"><span class="tier-label">SUV</span><span class="tier-price">$150</span></div>
+        <div class="service-tier"><span class="tier-label">Large SUV &amp; Truck</span><span class="tier-price">$180</span></div>
+      </div>
     </div>
     <div class="service-card slide-in">
       <span class="service-num">// 003</span>
-      <div class="service-name">Fleet Cleaning</div>
-      <p class="service-desc">Volume pricing for businesses with multiple vehicles. Work vans, company cars, or a full commercial fleet. Mike offers competitive rates for regular scheduled cleaning.</p>
-      <div class="service-price-tag">Ask Mike</div>
+      <div class="service-name">Full Detail</div>
+      <p class="service-desc">The complete package. Every inch of your vehicle — inside and out — brought back to its best.</p>
+      <ul class="service-includes">
+        <li>Full Exterior Foam Bath</li>
+        <li>Wheels &amp; Tires Deep Cleaned</li>
+        <li>Tire Shine Applied</li>
+        <li>Complete Vacuum &amp; Wipe Down of All Cracks &amp; Crevices</li>
+        <li>UV Protection Applied to Interior Surfaces</li>
+        <li>Leather Cleaned</li>
+        <li>Streak-Free Glass</li>
+      </ul>
+      <span class="service-time">~ 3.5–5 hrs</span>
+      <div class="service-pricing">
+        <div class="service-tier"><span class="tier-label">Sedan</span><span class="tier-price">$180</span></div>
+        <div class="service-tier"><span class="tier-label">SUV</span><span class="tier-price">$200</span></div>
+        <div class="service-tier"><span class="tier-label">Large SUV &amp; Truck</span><span class="tier-price">$230</span></div>
+      </div>
     </div>
   </div>
   <div class="addons-box">
     <span class="addons-box-header">Add-On Services</span>
     <div class="addons-items">
       <div class="addon-item">
-        <div class="addon-item-name">Exterior Wash</div>
-        <p class="addon-item-desc">Full hand wash with professional-grade soap, wheel cleaning, and a spotless rinse. The foundation for any great detail.</p>
-      </div>
-      <div class="addon-item">
-        <div class="addon-item-name">Exterior Wax</div>
-        <p class="addon-item-desc">Protective wax coat that shields your paint and delivers a finish that turns heads. Applied post-wash for maximum adhesion.</p>
-      </div>
-      <div class="addon-item">
-        <div class="addon-item-name">Engine Bay Clean</div>
-        <p class="addon-item-desc">Degreased, detailed, and dressed. A clean engine bay looks great and helps you catch leaks before they become problems.</p>
-      </div>
-      <div class="addon-item">
-        <div class="addon-item-name">Odor Elimination</div>
-        <p class="addon-item-desc">Professional-grade odor neutralizers that eliminate smells at the source. Pets, smoke, mildew. Actually gone, not masked.</p>
+        <div class="addon-item-name">Decontamination &amp; Clay Bar Service</div>
+        <p class="addon-item-desc">Removes embedded contaminants — fallout, rail dust, overspray — that washing alone can't touch. Leaves paint silky smooth and ready for protection. Available with Full Detail.</p>
+        <span class="addon-item-price">$50–$75</span>
       </div>
     </div>
   </div>
