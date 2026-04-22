@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
+  <!-- Dark background with parallelogram clip matching site's design language -->
+  <rect width="32" height="32" fill="#0a0a0a"/>
+  <!-- Gold angled accent bar -->
+  <rect x="0" y="26" width="32" height="3" fill="#e0b84e" opacity="0.6"/>
+  <!-- P lettermark in gold -->
+  <text
+    x="16"
+    y="23"
+    font-family="Arial Black, Arial, sans-serif"
+    font-weight="900"
+    font-size="22"
+    fill="#e0b84e"
+    text-anchor="middle"
+    dominant-baseline="auto"
+    letter-spacing="-1"
+  >P</text>
+</svg>

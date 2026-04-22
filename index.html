@@ -3,8 +3,109 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Pinnacle Auto Detail | Ferndale, WA</title>
+<title>Pinnacle Auto Detail | Mobile Auto Detailing · Ferndale &amp; Whatcom County, WA</title>
+<meta name="description" content="Professional mobile auto detailing in Ferndale, Bellingham, Lynden, and all of Whatcom County, WA. Interior detail, exterior wash, full detail packages — Mike comes to you. Text (360) 223-3861.">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://pinnacleautodetail.com/">
+
+<!-- Open Graph -->
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://pinnacleautodetail.com/">
+<meta property="og:title" content="Pinnacle Auto Detail | Mobile Auto Detailing · Whatcom County, WA">
+<meta property="og:description" content="Professional mobile auto detailing in Ferndale, Bellingham, and all of Whatcom County. We come to you — no drop-off needed. Text Mike at (360) 223-3861.">
+<meta property="og:site_name" content="Pinnacle Auto Detail">
+
+<!-- Twitter Card -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Pinnacle Auto Detail | Mobile Auto Detailing · Whatcom County, WA">
+<meta name="twitter:description" content="Professional mobile auto detailing in Ferndale, Bellingham, and all of Whatcom County. We come to you. Text Mike at (360) 223-3861.">
+
+<!-- Geo targeting -->
+<meta name="geo.region" content="US-WA">
+<meta name="geo.placename" content="Ferndale, Washington">
+
+<!-- Structured Data: Local Business -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "LocalBusiness",
+  "name": "Pinnacle Auto Detail",
+  "description": "Professional mobile auto detailing serving Ferndale, Bellingham, Lynden, Birch Bay, Blaine, and all of Whatcom County, WA. Interior detail, exterior wash, full detail packages — we come to you.",
+  "url": "https://pinnacleautodetail.com",
+  "telephone": "+13602233861",
+  "priceRange": "$$",
+  "image": "https://pinnacleautodetail.com/images/tesla-after/IMG_0076.jpeg",
+  "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "Ferndale",
+    "addressRegion": "WA",
+    "addressCountry": "US"
+  },
+  "areaServed": [
+    { "@type": "City", "name": "Ferndale", "containedInPlace": { "@type": "State", "name": "Washington" } },
+    { "@type": "City", "name": "Bellingham", "containedInPlace": { "@type": "State", "name": "Washington" } },
+    { "@type": "City", "name": "Lynden", "containedInPlace": { "@type": "State", "name": "Washington" } },
+    { "@type": "City", "name": "Birch Bay", "containedInPlace": { "@type": "State", "name": "Washington" } },
+    { "@type": "City", "name": "Blaine", "containedInPlace": { "@type": "State", "name": "Washington" } },
+    { "@type": "County", "name": "Whatcom County", "containedInPlace": { "@type": "State", "name": "Washington" } }
+  ],
+  "hasOfferCatalog": {
+    "@type": "OfferCatalog",
+    "name": "Mobile Auto Detailing Services",
+    "itemListElement": [
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Premium Exterior Wash",
+          "description": "Full exterior foam bath, wheels and tires deep cleaned, tire shine applied."
+        },
+        "priceSpecification": {
+          "@type": "PriceSpecification",
+          "minPrice": "65",
+          "maxPrice": "100",
+          "priceCurrency": "USD"
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Interior Detail",
+          "description": "Complete vacuum and wipe down, UV protection applied, leather cleaned, streak-free glass."
+        },
+        "priceSpecification": {
+          "@type": "PriceSpecification",
+          "minPrice": "125",
+          "maxPrice": "180",
+          "priceCurrency": "USD"
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Full Detail",
+          "description": "Complete interior and exterior detail package. Every inch of your vehicle inside and out."
+        },
+        "priceSpecification": {
+          "@type": "PriceSpecification",
+          "minPrice": "180",
+          "maxPrice": "230",
+          "priceCurrency": "USD"
+        }
+      }
+    ]
+  },
+  "sameAs": [
+    "https://www.google.com/search?q=Pinnacle+Auto+Detail+Ferndale+WA"
+  ]
+}
+</script>
+
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
 <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:ital,wght@0,400;0,600;0,700;0,900;1,700;1,900&family=Barlow:wght@300;400;500&family=Space+Mono&display=swap" rel="stylesheet">
 <style>
 *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
@@ -440,13 +541,13 @@ nav.scrolled { border-bottom-color: rgba(201,168,76,0.35); }
 }
 .addons-items {
   display: grid;
-  grid-template-columns: 1fr;
+  grid-template-columns: repeat(3, 1fr);
   gap: 0;
 }
 .addon-item {
   padding: 28px 28px;
   border-right: 1px solid rgba(201,168,76,0.12);
-  border-bottom: 1px solid rgba(201,168,76,0.12);
+  border-bottom: none;
   position: relative;
   overflow: hidden;
   transition: background 0.3s;
@@ -462,8 +563,7 @@ nav.scrolled { border-bottom-color: rgba(201,168,76,0.35); }
   z-index: 0;
 }
 .addon-item > * { position: relative; z-index: 1; }
-.addon-item:nth-child(2n) { border-right: none; }
-.addon-item:nth-last-child(-n+2) { border-bottom: none; }
+.addon-item:last-child { border-right: none; }
 .addon-item:hover::before { transform: translateX(0); }
 .addon-item:hover .addon-item-name { color: var(--black); }
 .addon-item:hover .addon-item-desc { color: rgba(0,0,0,0.65); }
@@ -976,6 +1076,9 @@ footer {
   .services-header { grid-template-columns: 1fr; gap: 24px; }
   .services-grid { grid-template-columns: 1fr; }
   .service-card { border-right: none; border-bottom: 1px solid rgba(201,168,76,0.2); }
+  .addons-items { grid-template-columns: 1fr; }
+  .addon-item { border-right: none; border-bottom: 1px solid rgba(201,168,76,0.12); }
+  .addon-item:last-child { border-bottom: none; }
   .gallery { padding: 80px 24px; }
   .gallery-header { flex-direction: column; align-items: flex-start; gap: 16px; }
   .gallery-note { text-align: left; }
@@ -1056,13 +1159,13 @@ img[src^="images/"] { cursor: zoom-in; }
   <div class="hero-left">
     <div class="hero-number">01</div>
     <div class="hero-main">
-      <div class="hero-tag">Ferndale, WA · Whatcom County</div>
+      <div class="hero-tag">Mobile Auto Detailing · Ferndale, WA · Whatcom County</div>
       <h1 class="hero-title">
-        YOUR CAR<br>
-        <span class="outline">DESERVES</span><br>
-        <span class="gold">THE BEST.</span>
+        MOBILE AUTO<br>
+        <span class="outline">DETAILING</span><br>
+        <span class="gold">FERNDALE, WA.</span>
       </h1>
-      <p class="hero-sub">Mobile auto detailing that hits different. Professional-grade results delivered to your driveway. No drop-off, no waiting around.</p>
+      <p class="hero-sub">Your car deserves the best. Professional-grade results delivered to your driveway — Ferndale, Bellingham, and all of Whatcom County. No drop-off, no waiting around.</p>
       <div class="hero-actions">
         <a href="tel:+13602233861" class="btn-gold">Text Mike</a>
         <a href="#services" class="btn-outline-white">See Services →</a>
@@ -1074,8 +1177,10 @@ img[src^="images/"] { cursor: zoom-in; }
         <div class="hero-stat-label">Starting Price</div>
       </div>
       <div class="hero-stat">
-        <div class="hero-stat-num">5<span>★</span></div>
-        <div class="hero-stat-label">Rated Service</div>
+        <a href="https://www.google.com/search?q=Pinnacle+Auto+Detail+Ferndale+WA#lrd" target="_blank" rel="noopener noreferrer" style="text-decoration:none;color:inherit;">
+          <div class="hero-stat-num">5<span>★</span></div>
+          <div class="hero-stat-label">Google Reviews</div>
+        </a>
       </div>
       <div class="hero-stat">
         <div class="hero-stat-num">100<span>%</span></div>
@@ -1187,6 +1292,16 @@ img[src^="images/"] { cursor: zoom-in; }
         <p class="addon-item-desc">Removes embedded contaminants — fallout, rail dust, overspray — that washing alone can't touch. Leaves paint silky smooth and ready for protection. Available with Full Detail.</p>
         <span class="addon-item-price">$50–$75</span>
       </div>
+      <div class="addon-item">
+        <div class="addon-item-name">Engine Bay Clean</div>
+        <p class="addon-item-desc">Degreased, rinsed, and dressed. A clean engine bay protects components, makes leaks easy to spot, and looks sharp when the hood goes up.</p>
+        <span class="addon-item-price">$75–$100</span>
+      </div>
+      <div class="addon-item">
+        <div class="addon-item-name">Odor Elimination</div>
+        <p class="addon-item-desc">Targeted odor treatment for smoke, pets, food, and mildew. We go after the source — not just the surface — so the smell doesn't come back.</p>
+        <span class="addon-item-price">$50–$100</span>
+      </div>
     </div>
   </div>
 </section>
@@ -1202,18 +1317,18 @@ img[src^="images/"] { cursor: zoom-in; }
   </div>
   <div class="gallery-pairs">
     <div class="gallery-pair">
-      <img class="pair-img pair-before" src="images/tesla-before/IMG_0054.jpeg" alt="Tesla before detail">
-      <img class="pair-img pair-after" src="images/tesla-after/IMG_0076.jpeg" alt="Tesla after detail">
+      <img class="pair-img pair-before" src="images/tesla-before/IMG_0054.jpeg" alt="Tesla exterior before mobile auto detailing - Pinnacle Auto Detail Ferndale WA">
+      <img class="pair-img pair-after" src="images/tesla-after/IMG_0076.jpeg" alt="Tesla exterior after professional auto detailing - Pinnacle Auto Detail Whatcom County">
       <div class="pair-label">Tesla · Before<span class="pair-label-tag">Hover for after →</span></div>
     </div>
     <div class="gallery-pair">
-      <img class="pair-img pair-before" src="images/tesla-before/IMG_0061.jpeg" alt="Tesla before detail">
-      <img class="pair-img pair-after" src="images/tesla-after/IMG_0087.jpeg" alt="Tesla after detail">
+      <img class="pair-img pair-before" src="images/tesla-before/IMG_0061.jpeg" alt="Tesla interior before mobile detailing service - Pinnacle Auto Detail Ferndale WA">
+      <img class="pair-img pair-after" src="images/tesla-after/IMG_0087.jpeg" alt="Tesla interior after full detail service - Pinnacle Auto Detail Whatcom County">
       <div class="pair-label">Tesla · Before<span class="pair-label-tag">Hover for after →</span></div>
     </div>
     <div class="gallery-pair">
-      <img class="pair-img pair-before" src="images/tesla-before/IMG_0063.jpeg" alt="Tesla before detail">
-      <img class="pair-img pair-after" src="images/tesla-after/IMG_0095.jpeg" alt="Tesla after detail">
+      <img class="pair-img pair-before" src="images/tesla-before/IMG_0063.jpeg" alt="Tesla wheels and tires before detailing - Pinnacle Auto Detail Ferndale WA">
+      <img class="pair-img pair-after" src="images/tesla-after/IMG_0095.jpeg" alt="Tesla wheels and tires after detail and tire shine - Pinnacle Auto Detail Whatcom County">
       <div class="pair-label">Tesla · Before<span class="pair-label-tag">Hover for after →</span></div>
     </div>
   </div>
@@ -1257,10 +1372,10 @@ img[src^="images/"] { cursor: zoom-in; }
     <div class="about-img-wrap">
       <div class="ba-slider" id="baSlider">
         <div class="ba-before">
-          <img src="images/oddysey-after/IMG_0046.jpeg" alt="Honda Odyssey after detailing">
+          <img src="images/oddysey-after/IMG_0046.jpeg" alt="Honda Odyssey interior after professional mobile detailing - Pinnacle Auto Detail Ferndale WA">
         </div>
         <div class="ba-after">
-          <img src="images/oddysey-before/IMG_0036.jpeg" alt="Honda Odyssey before detailing">
+          <img src="images/oddysey-before/IMG_0036.jpeg" alt="Honda Odyssey interior before mobile detailing service - Pinnacle Auto Detail Whatcom County">
         </div>
         <span class="ba-label ba-label-before">After</span>
         <span class="ba-label ba-label-after">Before</span>
@@ -1331,19 +1446,21 @@ img[src^="images/"] { cursor: zoom-in; }
     </div>
     <div class="footer-col">
       <h4>Contact</h4>
-      <p>
-        <strong>Mike</strong> · Ferndale, WA<br><br>
-        <a href="tel:+13602233861" style="color:var(--gold);">(360) 223-3861</a><br>
-        Text anytime<br><br>
-        <strong>Service Area</strong><br>
-        All of Whatcom County
-      </p>
+      <address style="font-style:normal;">
+        <p>
+          <strong>Mike</strong> · Ferndale, WA<br><br>
+          <a href="tel:+13602233861" style="color:var(--gold);">(360) 223-3861</a><br>
+          Text anytime<br><br>
+          <strong>Service Area</strong><br>
+          All of Whatcom County
+        </p>
+      </address>
     </div>
   </div>
   <div class="footer-bottom">
     <p>© 2025 Pinnacle Auto Detail · <a href="#">pinnacleautodetail.com</a> · Ferndale, WA</p>
     <p>Whatcom County's Mobile Detail Specialist</p>
-    <p>Site designed &amp; hosted by <a href="https://bellinghamhosting.com" target="_blank" rel="noopener">bellinghamhosting.com</a></p>
+    <p>Site designed &amp; hosted by <a href="https://bellinghamhosting.com" target="_blank" rel="noopener noreferrer">bellinghamhosting.com</a></p>
   </div>
 </footer>
 
