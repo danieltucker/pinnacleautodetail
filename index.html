@@ -35,6 +35,12 @@
   "telephone": "+13602233861",
   "priceRange": "$$",
   "image": "https://pinnacleautodetail.com/images/tesla-after/IMG_0076.jpeg",
+  "logo": {
+    "@type": "ImageObject",
+    "url": "https://pinnacleautodetail.com/logo.png",
+    "width": 600,
+    "height": 160
+  },
   "address": {
     "@type": "PostalAddress",
     "addressLocality": "Ferndale",
@@ -93,6 +99,20 @@
           "minPrice": "180",
           "maxPrice": "230",
           "priceCurrency": "USD"
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Monthly Car Clean",
+          "description": "Two visits per month — exterior wash, tire wash and shine, interior vacuum, and wipedown. Optional UV protection and SO3 sealant add-ons available."
+        },
+        "priceSpecification": {
+          "@type": "PriceSpecification",
+          "price": "120",
+          "priceCurrency": "USD",
+          "unitText": "MONTH"
         }
       }
     ]
@@ -547,7 +567,7 @@ nav.scrolled { border-bottom-color: rgba(201,168,76,0.35); }
 .addon-item {
   padding: 28px 28px;
   border-right: 1px solid rgba(201,168,76,0.12);
-  border-bottom: none;
+  border-bottom: 1px solid rgba(201,168,76,0.12);
   position: relative;
   overflow: hidden;
   transition: background 0.3s;
@@ -563,7 +583,114 @@ nav.scrolled { border-bottom-color: rgba(201,168,76,0.35); }
   z-index: 0;
 }
 .addon-item > * { position: relative; z-index: 1; }
+.addon-item:nth-child(3n) { border-right: none; }
 .addon-item:last-child { border-right: none; }
+.addon-item:nth-last-child(-n+2) { border-bottom: none; }
+.addon-tiers { margin-top: 10px; display: flex; flex-direction: column; gap: 3px; }
+.addon-tier {
+  display: flex; justify-content: space-between;
+  padding: 5px 10px;
+  background: rgba(224,184,78,0.06);
+  border-left: 2px solid rgba(224,184,78,0.4);
+  font-size: 0.78rem;
+  transition: background 0.35s, border-color 0.35s;
+}
+.addon-tier-label { color: var(--muted); transition: color 0.35s; }
+.addon-tier-price { font-family: var(--condensed); font-weight: 700; color: var(--gold); transition: color 0.35s; }
+.addon-item:hover .addon-tier { background: rgba(0,0,0,0.12); border-left-color: rgba(0,0,0,0.25); }
+.addon-item:hover .addon-tier-label { color: rgba(0,0,0,0.65); }
+.addon-item:hover .addon-tier-price { color: var(--black); }
+
+/* MONTHLY PLAN */
+.monthly-plan-card {
+  margin-top: 2px;
+  border: 1px solid rgba(201,168,76,0.2);
+  background: var(--dark2);
+  padding: 48px 36px;
+  position: relative;
+  overflow: hidden;
+}
+.monthly-plan-card::after {
+  content: '';
+  position: absolute;
+  top: -80px; right: -80px;
+  width: 300px; height: 300px;
+  background: var(--gold);
+  border-radius: 50%;
+  opacity: 0.03;
+  pointer-events: none;
+}
+.monthly-badge {
+  display: inline-block;
+  background: var(--gold);
+  color: var(--black);
+  font-family: var(--condensed);
+  font-weight: 700;
+  font-size: 0.72rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  padding: 5px 16px;
+  clip-path: polygon(6px 0%, 100% 0%, calc(100% - 6px) 100%, 0% 100%);
+  margin-bottom: 20px;
+}
+.monthly-plan-inner {
+  display: grid;
+  grid-template-columns: 1fr 300px;
+  gap: 60px;
+  align-items: start;
+}
+.monthly-price-block {
+  border: 1px solid rgba(201,168,76,0.2);
+  padding: 32px 28px;
+  background: var(--dark3);
+}
+.monthly-price-num {
+  font-family: var(--condensed);
+  font-weight: 900;
+  font-size: 3.5rem;
+  line-height: 1;
+  color: var(--white);
+  margin-bottom: 4px;
+}
+.monthly-price-num span { color: var(--gold); }
+.monthly-price-period {
+  font-family: var(--mono);
+  font-size: 0.62rem;
+  color: var(--muted);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  margin-bottom: 8px;
+  display: block;
+}
+.monthly-price-visits {
+  font-size: 0.82rem;
+  color: rgba(201,168,78,0.65);
+  margin-bottom: 24px;
+  display: block;
+  border-bottom: 1px solid rgba(201,168,76,0.12);
+  padding-bottom: 20px;
+}
+.monthly-extras-label {
+  font-family: var(--mono);
+  font-size: 0.6rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: rgba(201,168,76,0.4);
+  margin-bottom: 10px;
+  display: block;
+}
+.monthly-extra-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 8px 12px;
+  background: rgba(224,184,78,0.06);
+  border-left: 2px solid var(--gold);
+  margin-bottom: 4px;
+}
+.monthly-extra-item:last-child { margin-bottom: 0; }
+.monthly-extra-label { font-size: 0.8rem; color: var(--muted); }
+.monthly-extra-price { font-family: var(--condensed); font-weight: 700; color: var(--gold); font-size: 0.95rem; }
 .addon-item:hover::before { transform: translateX(0); }
 .addon-item:hover .addon-item-name { color: var(--black); }
 .addon-item:hover .addon-item-desc { color: rgba(0,0,0,0.65); }
@@ -1037,6 +1164,123 @@ footer {
 .footer-bottom p { font-size: 0.7rem; color: rgba(245,240,232,0.18); letter-spacing: 0.05em; }
 .footer-bottom a { color: rgba(201,168,76,0.5); text-decoration: none; }
 
+/* BLOG TEASER */
+.blog-teaser {
+  background: var(--dark2);
+  padding: 100px 48px;
+  border-bottom: 1px solid rgba(201,168,76,0.1);
+}
+.blog-teaser-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  margin-bottom: 48px;
+}
+.blog-teaser h2 {
+  font-family: var(--condensed);
+  font-weight: 900;
+  font-style: italic;
+  font-size: clamp(2.5rem, 5vw, 4.5rem);
+  line-height: 0.88;
+  text-transform: uppercase;
+  color: var(--white);
+}
+.blog-teaser h2 span { color: var(--gold); }
+.blog-teaser-link {
+  font-family: var(--condensed);
+  font-weight: 700;
+  font-size: 0.82rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--muted);
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  transition: color 0.2s, gap 0.2s;
+  flex-shrink: 0;
+}
+.blog-teaser-link:hover { color: var(--gold); gap: 14px; }
+.blog-teaser-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2px;
+}
+.blog-teaser-card {
+  display: flex;
+  gap: 0;
+  background: var(--dark3);
+  border: 1px solid rgba(201,168,76,0.12);
+  text-decoration: none;
+  overflow: hidden;
+  transition: border-color 0.3s;
+}
+.blog-teaser-card:hover { border-color: rgba(201,168,76,0.4); }
+.blog-teaser-img-wrap { flex-shrink: 0; width: 160px; overflow: hidden; }
+.blog-teaser-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  filter: saturate(0.6) brightness(0.8);
+  transition: filter 0.4s ease, transform 0.5s ease;
+}
+.blog-teaser-card:hover .blog-teaser-img { filter: saturate(0.85) brightness(0.95); transform: scale(1.06); }
+.blog-teaser-body {
+  padding: 24px 28px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.blog-teaser-meta {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 10px;
+}
+.blog-teaser-cat {
+  font-family: var(--mono);
+  font-size: 0.55rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--gold);
+  background: rgba(224,184,78,0.08);
+  padding: 3px 9px;
+}
+.blog-teaser-date {
+  font-family: var(--mono);
+  font-size: 0.55rem;
+  letter-spacing: 0.08em;
+  color: var(--muted);
+}
+.blog-teaser-title {
+  font-family: var(--condensed);
+  font-weight: 900;
+  font-size: 1.25rem;
+  line-height: 1.05;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+  color: var(--white);
+  margin-bottom: 8px;
+  transition: color 0.2s;
+}
+.blog-teaser-card:hover .blog-teaser-title { color: var(--gold); }
+.blog-teaser-excerpt {
+  font-size: 0.82rem;
+  line-height: 1.65;
+  color: var(--muted);
+  margin-bottom: 16px;
+  flex: 1;
+}
+.blog-teaser-read {
+  font-family: var(--condensed);
+  font-weight: 700;
+  font-size: 0.75rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--gold);
+}
+
 /* SCROLL ANIM */
 .slide-in {
   opacity: 0;
@@ -1078,7 +1322,10 @@ footer {
   .service-card { border-right: none; border-bottom: 1px solid rgba(201,168,76,0.2); }
   .addons-items { grid-template-columns: 1fr; }
   .addon-item { border-right: none; border-bottom: 1px solid rgba(201,168,76,0.12); }
-  .addon-item:last-child { border-bottom: none; }
+  .addon-item:nth-child(3n) { border-right: none; }
+  .addon-item:nth-last-child(-n+2) { border-bottom: 1px solid rgba(201,168,76,0.12); }
+  .addon-item:last-child { border-right: none; border-bottom: none; }
+  .monthly-plan-inner { grid-template-columns: 1fr; gap: 28px; }
   .gallery { padding: 80px 24px; }
   .gallery-header { flex-direction: column; align-items: flex-start; gap: 16px; }
   .gallery-note { text-align: left; }
@@ -1090,6 +1337,11 @@ footer {
   .about-inner { grid-template-columns: 1fr; }
   .cta-section { padding: 80px 24px; }
   .cta-inner { grid-template-columns: 1fr; gap: 48px; }
+  .blog-teaser { padding: 80px 24px; }
+  .blog-teaser-header { flex-direction: column; align-items: flex-start; gap: 16px; }
+  .blog-teaser-grid { grid-template-columns: 1fr; }
+  .blog-teaser-card { flex-direction: column; }
+  .blog-teaser-img-wrap { width: 100%; height: 160px; }
   footer { padding: 60px 24px 30px; }
   .footer-top { grid-template-columns: 1fr; gap: 40px; }
   .footer-bottom { flex-direction: column; gap: 10px; text-align: center; }
@@ -1149,6 +1401,7 @@ img[src^="images/"] { cursor: zoom-in; }
     <li><a href="#services">Services</a></li>
     <li><a href="#gallery">Gallery</a></li>
     <li><a href="#about">About</a></li>
+    <li><a href="/blog/">Blog</a></li>
     <li><a href="#contact">Contact</a></li>
   </ul>
   <a href="tel:+13602233861" class="nav-cta">Book Now</a>
@@ -1195,11 +1448,13 @@ img[src^="images/"] { cursor: zoom-in; }
   <div class="ticker-inner">
     <span class="ticker-item">Full Interior Detail</span>
     <span class="ticker-item sep">◆</span>
-    <span class="ticker-item">Engine Bay Clean</span>
+    <span class="ticker-item">Engine Bay Detail</span>
     <span class="ticker-item sep">◆</span>
-    <span class="ticker-item">Exterior Wax</span>
+    <span class="ticker-item">Monthly Car Clean</span>
     <span class="ticker-item sep">◆</span>
-    <span class="ticker-item">Odor Elimination</span>
+    <span class="ticker-item">UV Protection</span>
+    <span class="ticker-item sep">◆</span>
+    <span class="ticker-item">SO3 Paint Sealant</span>
     <span class="ticker-item sep">◆</span>
     <span class="ticker-item">Mobile Service</span>
     <span class="ticker-item sep">◆</span>
@@ -1207,11 +1462,13 @@ img[src^="images/"] { cursor: zoom-in; }
     <span class="ticker-item sep">◆</span>
     <span class="ticker-item">Full Interior Detail</span>
     <span class="ticker-item sep">◆</span>
-    <span class="ticker-item">Engine Bay Clean</span>
+    <span class="ticker-item">Engine Bay Detail</span>
     <span class="ticker-item sep">◆</span>
-    <span class="ticker-item">Exterior Wax</span>
+    <span class="ticker-item">Monthly Car Clean</span>
     <span class="ticker-item sep">◆</span>
-    <span class="ticker-item">Odor Elimination</span>
+    <span class="ticker-item">UV Protection</span>
+    <span class="ticker-item sep">◆</span>
+    <span class="ticker-item">SO3 Paint Sealant</span>
     <span class="ticker-item sep">◆</span>
     <span class="ticker-item">Mobile Service</span>
     <span class="ticker-item sep">◆</span>
@@ -1284,22 +1541,69 @@ img[src^="images/"] { cursor: zoom-in; }
       </div>
     </div>
   </div>
+
+  <!-- Monthly Plan -->
+  <div class="monthly-plan-card">
+    <span class="monthly-badge">Monthly Plan</span>
+    <div class="monthly-plan-inner">
+      <div>
+        <div class="service-name">Monthly Car Clean</div>
+        <p class="service-desc">Keep your car consistently clean without lifting a finger. Mike comes out twice a month — your vehicle stays sharp, protected, and fresh all year round.</p>
+        <ul class="service-includes">
+          <li>Exterior Wash</li>
+          <li>Tire Wash &amp; Tire Shine</li>
+          <li>Interior Vacuum</li>
+          <li>Full Interior Wipedown</li>
+        </ul>
+        <span class="service-time">2 visits / month · Flexible scheduling · We come to you</span>
+      </div>
+      <div class="monthly-price-block">
+        <div class="monthly-price-num"><span>$120</span></div>
+        <span class="monthly-price-period">Per month</span>
+        <span class="monthly-price-visits">2 visits included every month</span>
+        <span class="monthly-extras-label">Optional Add-Ons (per visit)</span>
+        <div class="monthly-extra-item">
+          <span class="monthly-extra-label">VRP (UV Protectant)</span>
+          <span class="monthly-extra-price">+$15</span>
+        </div>
+        <div class="monthly-extra-item">
+          <span class="monthly-extra-label">SO3 Sealant Coat</span>
+          <span class="monthly-extra-price">+$25</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
   <div class="addons-box">
-    <span class="addons-box-header">Add-On Services</span>
+    <span class="addons-box-header">Up-Charge Services</span>
     <div class="addons-items">
       <div class="addon-item">
-        <div class="addon-item-name">Decontamination &amp; Clay Bar Service</div>
-        <p class="addon-item-desc">Removes embedded contaminants — fallout, rail dust, overspray — that washing alone can't touch. Leaves paint silky smooth and ready for protection. Available with Full Detail.</p>
-        <span class="addon-item-price">$50–$75</span>
+        <div class="addon-item-name">Leather Conditioning</div>
+        <p class="addon-item-desc">Deep conditions and restores suppleness to leather surfaces. Prevents cracking, keeps seats looking and feeling new.</p>
+        <span class="addon-item-price">$25</span>
       </div>
       <div class="addon-item">
-        <div class="addon-item-name">Engine Bay Clean</div>
+        <div class="addon-item-name">UV Protection</div>
+        <p class="addon-item-desc">Shields surfaces from UV fade and damage. Available for interior, exterior, or both — each priced separately.</p>
+        <div class="addon-tiers">
+          <div class="addon-tier"><span class="addon-tier-label">Interior</span><span class="addon-tier-price">$25</span></div>
+          <div class="addon-tier"><span class="addon-tier-label">Exterior</span><span class="addon-tier-price">$20</span></div>
+          <div class="addon-tier"><span class="addon-tier-label">Interior &amp; Exterior</span><span class="addon-tier-price">$35</span></div>
+        </div>
+      </div>
+      <div class="addon-item">
+        <div class="addon-item-name">SO3 Hydrophobic Sealant</div>
+        <p class="addon-item-desc">A nano-coat sealant that makes water bead and roll right off. Protects your paint between details. Add-on for exterior wash.</p>
+        <span class="addon-item-price">$25</span>
+      </div>
+      <div class="addon-item">
+        <div class="addon-item-name">Wax &amp; Decontamination</div>
+        <p class="addon-item-desc">Removes embedded fallout, rail dust, and overspray, then seals with a wax layer for added gloss and protection.</p>
+        <span class="addon-item-price">$50–$100</span>
+      </div>
+      <div class="addon-item">
+        <div class="addon-item-name">Engine Bay Detail</div>
         <p class="addon-item-desc">Degreased, rinsed, and dressed. A clean engine bay protects components, makes leaks easy to spot, and looks sharp when the hood goes up.</p>
-        <span class="addon-item-price">$75–$100</span>
-      </div>
-      <div class="addon-item">
-        <div class="addon-item-name">Odor Elimination</div>
-        <p class="addon-item-desc">Targeted odor treatment for smoke, pets, food, and mildew. We go after the source — not just the surface — so the smell doesn't come back.</p>
         <span class="addon-item-price">$50–$100</span>
       </div>
     </div>
@@ -1426,6 +1730,37 @@ img[src^="images/"] { cursor: zoom-in; }
   </div>
 </section>
 
+<!-- BLOG TEASER -->
+<section class="blog-teaser">
+  <div class="blog-teaser-header">
+    <div>
+      <div class="section-tag">From the Blog</div>
+      <h2>CAR CARE<br><span>TIPS &amp; ADVICE</span></h2>
+    </div>
+    <a href="/blog/" class="blog-teaser-link">All Posts →</a>
+  </div>
+  <div class="blog-teaser-grid">
+
+    <a class="blog-teaser-card" href="/blog/leather-conditioning.html">
+      <div class="blog-teaser-img-wrap">
+        <img class="blog-teaser-img" src="images/oddysey-after/IMG_0046.jpeg" alt="Clean conditioned leather interior — Pinnacle Auto Detail">
+      </div>
+      <div class="blog-teaser-body">
+        <div>
+          <div class="blog-teaser-meta">
+            <span class="blog-teaser-cat">Interior Care</span>
+            <time class="blog-teaser-date" datetime="2026-04-23">April 23, 2026</time>
+          </div>
+          <div class="blog-teaser-title">Why Leather Conditioning Isn't Optional</div>
+          <p class="blog-teaser-excerpt">Leather dries out, fades, and cracks when neglected. Here's what's actually happening to your seats — and why skipping it costs you more in the long run.</p>
+        </div>
+        <span class="blog-teaser-read">Read More →</span>
+      </div>
+    </a>
+
+  </div>
+</section>
+
 <!-- FOOTER -->
 <footer>
   <div class="footer-top">
@@ -1436,12 +1771,13 @@ img[src^="images/"] { cursor: zoom-in; }
     <div class="footer-col">
       <h4>Services</h4>
       <ul>
-        <li><a href="#services">Full Detail: Car</a></li>
-        <li><a href="#services">Full Detail: SUV/Truck</a></li>
+        <li><a href="#services">Full Detail</a></li>
+        <li><a href="#services">Interior Detail</a></li>
         <li><a href="#services">Exterior Wash</a></li>
-        <li><a href="#services">Exterior Wax</a></li>
-        <li><a href="#services">Engine Bay Clean</a></li>
-        <li><a href="#services">Odor Elimination</a></li>
+        <li><a href="#services">Monthly Car Clean</a></li>
+        <li><a href="#services">Engine Bay Detail</a></li>
+        <li><a href="#services">UV Protection</a></li>
+        <li><a href="#services">SO3 Paint Sealant</a></li>
       </ul>
     </div>
     <div class="footer-col">
